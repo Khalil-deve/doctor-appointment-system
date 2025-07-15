@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Optional: make sure this is added if not already
-import "./Index.css";
+import "./index.css";
 
 // Pages
 const Home = lazy(() => import("./pages/Home"));
