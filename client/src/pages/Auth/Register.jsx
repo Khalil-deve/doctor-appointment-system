@@ -62,6 +62,7 @@ export default function SignUp() {
     formData.append("name", name);
     formData.append("role", role);
     console.log('the profile Image is: ', profilePic);
+    console.log('the backend url is: ', import.meta.env.VITE_API_URL)
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, formData, {
         headers: {
@@ -80,7 +81,7 @@ export default function SignUp() {
         localStorage.setItem("userData", user ? JSON.stringify(user) : "{}");
         setUser(user);
 
-        user.role === "doctor" && navigate("/doctor/dashboard");
+        user.role === "doctor" && navigate("/doctor-form");
         user.role === "patient" && navigate("/patient/dashboard");
         user.role === "admin" && navigate("/admin/dashboard");
 
