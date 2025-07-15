@@ -128,7 +128,7 @@ const DoctorForm = () => {
     if (!formData.consultationFee)
       newErrors.consultationFee = "Consultation fee is required";
 
-    // ✅ Validate availability
+    //  Validate availability
     if (formData.availability.length === 0) {
       newErrors.availability = "At least one availability slot is required";
     } else {
@@ -140,14 +140,14 @@ const DoctorForm = () => {
       });
     }
 
-    // ✅ Validate education entries
+    //  Validate education entries
     formData.education.forEach((edu, i) => {
       if (!edu.trim()) {
         newErrors[`education_${i}`] = "Education is required";
       }
     });
 
-    // ✅ Validate service entries
+    //  Validate service entries
     formData.services.forEach((service, i) => {
       if (!service.trim()) {
         newErrors[`services_${i}`] = "Service is required";
@@ -188,7 +188,7 @@ const DoctorForm = () => {
       };
 
       const response = await axios.post(
-        `/api/doctors/register/${user._id}`,
+        `${import.meta.env.VITE_API_URL}/api/doctors/register/${user._id}`,
         payload,
         {
           headers: {

@@ -54,10 +54,10 @@ export default function AdminDashboard() {
           { data: doctors },
           { data: appointments },
         ] = await Promise.all([
-          axios.get("/api/admin/users"),
-          axios.get("/api/admin/patients"),
-          axios.get("/api/admin/doctors"),
-          axios.get("/api/admin/appointments"),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/admin/users`),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/admin/patients`),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/admin/doctors`),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/admin/appointments`),
         ]);
 
         setData({

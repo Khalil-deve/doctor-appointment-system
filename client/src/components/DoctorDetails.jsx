@@ -34,7 +34,7 @@ const DoctorDetails = () => {
 
     try {
       // Call your API to create the appointment
-      const response = await fetch("/api/appointments/new", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments/new`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

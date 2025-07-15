@@ -82,7 +82,7 @@ const PatientForm = () => {
 
       // Send the data to the server
 
-      const response = await axios.post('/api/patients', payload, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/patients`, payload, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`

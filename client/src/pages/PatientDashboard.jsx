@@ -31,7 +31,7 @@ const MyAppointments = () => {
     const fetchAppointments = async () => {
       try {
         const res = await axios.get(
-          `/api/patients/${user._id}`,
+          `${import.meta.env.VITE_API_URL}/api/patients/${user._id}`,
           {}, // request body (empty in this case)
           {
             headers: {
@@ -58,7 +58,7 @@ const MyAppointments = () => {
   const handleCancel = async () => {
     try {
       const res = await axios.patch(
-        `/api/appointments/cancel/${selectedId}`,
+        `${import.meta.env.VITE_API_URL}/api/appointments/cancel/${selectedId}`,
         {}, // request body (empty in this case)
         {
           headers: {
@@ -97,7 +97,7 @@ const MyAppointments = () => {
   const submitEdit = async () => {
     try {
       const res = await axios.patch(
-        `/api/appointments/edit/${selectedId}`,
+        `${import.meta.env.VITE_API_URL}/api/appointments/edit/${selectedId}`,
         {
           date: editFormData.date,
           timeSlot: editFormData.timeSlot,

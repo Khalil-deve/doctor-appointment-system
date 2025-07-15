@@ -11,7 +11,7 @@ export default function BookAppointment () {
   const handleBook = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/appointments', { doctorId, date, time });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/appointments`, { doctorId, date, time });
       toast.success('Appointment booked successfully!');
     } catch (error) {
       toast.error('Failed to book appointment. Please try again.');

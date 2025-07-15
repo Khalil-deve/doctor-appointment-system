@@ -8,7 +8,7 @@ export default function DoctorSearch () {
 
   useEffect(() => {
     const fetchDoctors = async () => {
-      const response = await axios.get('/api/doctors', { params: { specialization } });
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/doctors`, { params: { specialization } });
       setDoctors(response.data);
     };
     fetchDoctors();

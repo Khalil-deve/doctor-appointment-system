@@ -15,7 +15,7 @@ export default function AllDoctors() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("/api/doctors");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/doctors`);
         setDoctors(response.data.data);
         setFiltered(response.data.data);
       } catch (error) {
