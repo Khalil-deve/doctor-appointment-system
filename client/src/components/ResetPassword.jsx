@@ -30,7 +30,7 @@ export default function ResetPassword() {
     try {
       setLoading(true);
 
-      const res = await fetch(`http://localhost:5000/api/auth/reset-password/${token}`, {
+      const res = await fetch(`https://doctor-appointment-system-sage-psi.vercel.app/api/auth/reset-password/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
