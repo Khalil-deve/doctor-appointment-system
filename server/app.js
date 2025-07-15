@@ -9,7 +9,6 @@ const errorHandler = require('./middleware/errorHandler.js');
 
 // Import routes
 const authRoutes = require('./routes/auths.js');
-// const userRoutes = require('./routes/users');
 const doctorRoutes = require('./routes/doctors.js');
 const patientRoutes = require('./routes/patients.js');
 const appointmentRoutes = require('./routes/appointments');
@@ -36,7 +35,6 @@ if (process.env.NODE_ENV === 'development') {
 
 // Routes
 app.use('/api/auth', authRoutes);
-// app.use('/api/users', userRoutes);
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/appointments', appointmentRoutes);
