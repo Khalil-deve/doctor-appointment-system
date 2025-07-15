@@ -63,7 +63,7 @@ export default function SignUp() {
     formData.append("role", role);
     console.log('the profile Image is: ', profilePic);
     try {
-      const response = await axios.post("api/auth/register", formData, {
+      const response = await axios.post("/api/auth/register", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
