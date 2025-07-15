@@ -72,11 +72,10 @@ cd ../server
 npm run dev       # for backend
 ```
 
-````
 
 Make sure to set up `.env` files in both `client` and `server` directories.
 
----
+
 
 ## 🔮 Future Improvements
 
@@ -93,5 +92,3 @@ If you'd like to connect or suggest improvements, feel free to reach out:
 
 ```
 
-```
-````
