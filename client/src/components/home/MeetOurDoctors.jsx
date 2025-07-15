@@ -10,7 +10,9 @@ export default function MeetOurDoctors() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get("/api/doctors");
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/doctors`
+        );
         setDoctors(response.data.data);
         setFiltered(response.data.data);
       } catch (error) {
@@ -42,14 +44,15 @@ export default function MeetOurDoctors() {
           <div className="col-span-4 text-center py-10">
             <p className="text-gray-500">Loading doctors...</p>
           </div>
-        ) : filtered.length === 0 ? (
+        ) : Array.isArray(filtered) && filtered.length === 0 ? (
           <div className="col-span-4 text-center py-10">
             <p className="text-gray-500">No doctors found.</p>
           </div>
-        ) : null}
-        {filtered.slice(0, 4).map((doc) => (
-          <DoctorCard key={doc._id} doctor={doc} />
-        ))}
+        ) : (
+          filtered
+            .slice(0, 4)
+            .map((doc) => <DoctorCard key={doc._id} doctor={doc} />)
+        )}
       </div>
 
       {/* Search (Optional) */}
