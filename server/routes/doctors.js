@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllDoctors } = require('../controllers/doctorController');
+const { getAllDoctors } = require('../controllers/DoctorController');
 const { validateDoctorRegistration } = require('../middleware/validator/doctorValidator');
 const validateResult = require('../middleware/validator/validateResult');
 const doctorController = require('../controllers/DoctorRegister');
