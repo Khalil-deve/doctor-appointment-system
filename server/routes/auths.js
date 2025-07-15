@@ -6,8 +6,8 @@ const { upload } = require('../middleware/UploadMiddlewares/cloudinaryConfig');
 
 const register = require('../controllers/authController/register');
 const loginUser = require('../controllers/authController/loginUser');
-const forgotPassword = require('../controllers/AuthController/forgotPassword');
-const resetPassword = require('../controllers/AuthController/resetPassword');
+const forgotPassword = require('../controllers/authController/forgotPassword');
+const resetPassword = require('../controllers/authController/resetPassword');
 
 // Signup Route
 // Uses multer for file upload and express-validator for input validation 
