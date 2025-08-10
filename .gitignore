@@ -1,6 +1,5 @@
 # Root-level node_modules and .env (if any)
 node_modules/
-.env
 
 # Ignore client build and sensitive files
 /client/node_modules/
@@ -44,3 +43,4 @@ dist-ssr/
 
 # Optional: Ignore test coverage output
 coverage/
+config.bat
